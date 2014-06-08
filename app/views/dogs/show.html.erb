@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row clearfix">
+    <div class="info-card">
+      dog profile picture
+      <h2><%= @dog.name %></h2>
+      <%= @dog.description %>
+    </div>
+    <ul class="its-story">
+      <%= link_to 'New Story', new_dog_story_path(@dog) %>
+      <% @stories.each do |story| %>
+        <li>
+          <%= story.title %>
+          <%= story.content %>
+          <%= link_to 'Edit Story', edit_dog_story_path(story.dog, story) %>
+          <%= link_to 'Delete Story', dog_story_path(story.dog, story), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>All dogs</h1>
+  <ul id="dogwall">
+    <% @dogs.each do |dog| %>
+      <li>
+        <div class="dog-snap">woof</div>
+        <div class="dog-name"><%= link_to dog.name, dog %></div>
+        <div class="dog-breeds"></div>
+        <div class="dog-control"></div>
+      </li>
+    <% end %>
+  </ul>
+</div>
